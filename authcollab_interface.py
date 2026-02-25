@@ -18,8 +18,8 @@ DATE_COL = "date"
 @st.cache_data
 def load_data():
     try:
-        with zipfile.ZipFile("authcollab_25.zip", "r") as z:
-            with z.open("authcollab_25.csv") as f:
+        with zipfile.ZipFile("authcollab_full_f25.zip", "r") as z:
+            with z.open("authcollab_full_f25.csv") as f:
                 df = pd.read_csv(TextIOWrapper(f, "utf-8"))
 
         def safe_parse_actor_ids(x):
