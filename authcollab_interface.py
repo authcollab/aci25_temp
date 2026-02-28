@@ -18,8 +18,8 @@ DATE_COL = "date"
 @st.cache_data
 def load_data():
     try:
-        with zipfile.ZipFile("authcollab_full_f25.zip", "r") as z:
-            with z.open("authcollab_full_f25.csv") as f:
+        with zipfile.ZipFile("authcollab_f28.zip", "r") as z:
+            with z.open("authcollab_f28.csv") as f:
                 df = pd.read_csv(TextIOWrapper(f, "utf-8"))
 
         def safe_parse_actor_ids(x):
@@ -97,7 +97,6 @@ def row_matches(row):
 filtered_df = df[df.apply(row_matches, axis=1)]
 
 # === DISPLAY ===
-st.markdown(f"### 🎯 Showing {len(filtered_df)} result(s)")
 
 if not filtered_df.empty:
     display_cols = [ID_COL, DATE_COL, SUMMARY_COL, COLLAB_TYPE_COL, ACTORS_COL, SOURCE_COL]
