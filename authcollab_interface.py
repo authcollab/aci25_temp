@@ -98,6 +98,8 @@ filtered_df = df[df.apply(row_matches, axis=1)]
 
 # === DISPLAY ===
 
+st.markdown("### 🎯 Results")
+
 if not filtered_df.empty:
     display_cols = [ID_COL, DATE_COL, SUMMARY_COL, COLLAB_TYPE_COL, ACTORS_COL, SOURCE_COL]
     st.dataframe(filtered_df[display_cols], use_container_width=True)
