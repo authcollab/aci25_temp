@@ -98,7 +98,7 @@ filtered_df = df[df.apply(row_matches, axis=1)]
 
 # === DISPLAY ===
 
-st.markdown("### 🎯 Results")
+st.markdown(f"### 🎯 Showing {len(filtered_df)} result(s)")
 
 if not filtered_df.empty:
     display_cols = [ID_COL, DATE_COL, SUMMARY_COL, COLLAB_TYPE_COL, ACTORS_COL, SOURCE_COL]
